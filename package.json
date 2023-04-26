@@ -34,6 +34,10 @@
 		"react",
 		"web animation api"
 	],
+  "repository": {
+		"type": "git",
+		"url": "git+https://github.com/KarthikAravindR/Animation-Wrapper.git"
+	},
   "eslintConfig": {
     "extends": [
       "react-app",
