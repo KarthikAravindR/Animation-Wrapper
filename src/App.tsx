@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { useEffect, useRef, useState } from "react";
+interface AnimationWrapperProps {
+  show: boolean;
+  children: JSX.Element;
+  from?: Keyframe;
+  to?: Keyframe;
+  unmountAnimation?: Array<Keyframe>;
+  options?: object;
+  className?: string;
 }
 
-export default App;
+export const AnimationWrapper = ({
+  show,
+  children,
+  from = { opacity: 0 },
+  to = { opacity: 1 },
+  unmountAnimation,
+  options = { duration: 500, fill: "forwards" },
+  className,
+}: AnimationWrapperProps) => {
+  const element = useRef<HTMLDivElement>(null);
+  const [removeState, setRemoveState] = useState(!show);
+
+  useEffect(() => {
+    const elementToAnimate = element.current;
+
+    if (show) {
+      setRemoveState(false);
+      if (!elementToAnimate) return;
+      elementToAnimate.animate([from, to], options);
+    } else if (elementToAnimate) {
+      const animation = elementToAnimate.animate(
+        unmountAnimation || [to, from],
+        options
+      );
+      animation.onfinish = () => setRemoveState(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [show, removeState]);
+
+  return !removeState ? (
+    <div className={className} ref={element}>
+      {children}
+    </div>
+  ) : null;
+};
