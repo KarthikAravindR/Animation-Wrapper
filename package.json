@@ -1,28 +1,24 @@
 {
   "name": "animation-wrapper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Wrapper that animates the children on mount and unmount and destroy itself after unmount",
   "private": false,
   "author": "KarthikAravindR",
   "license": "MIT",
+  "main": "./dist/animation.mjs",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.18.25",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5"
+    "typescript": "^4.9.5",
+    "vite-plugin-dts": "^2.3.0"
+  },
+  "devDependencies": {
+    "vite": "^4.3.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "vite build"
   },
   "files": [
     "*.md",
@@ -30,7 +26,7 @@
   ],
   "keywords": [
     "animation",
-    "animate on unount",
+    "animate on unmount",
     "react",
     "web animation api"
   ],
