@@ -1,6 +1,6 @@
 {
   "name": "animation-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Wrapper that animates the children on mount and unmount and destroy itself after unmount",
   "private": false,
   "author": "KarthikAravindR",
