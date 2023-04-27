@@ -16,7 +16,7 @@ npm install animation-wrapper
 ## Usage
 
 ```jsx
-import { AnimationWrapper } from "control-flow-react";
+import { AnimationWrapper } from "animation-wrapper";
 
 const [show, setShow] = useState(false);
 return (
