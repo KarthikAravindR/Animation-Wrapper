@@ -1,13 +1,15 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "jsx": "react",
-    "declaration": true,
-    "esModuleInterop": true,
-    "outDir": "dist",
-    "target": "es6",
-    "module": "es6",
-    "moduleResolution": "node"
-  },
-  "include": ["src"]
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"jsx": "react",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"lib": ["dom", "esnext"],
+		"strict": true,
+		"declaration": true,
+		"rootDir": "./src",
+		"outDir": "./dist/esm",
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "dist"]
 }
