@@ -1,3 +1,1 @@
-import { AnimationWrapper } from "./App";
-
-export { AnimationWrapper };
+export { AnimationWrapper } from "./animation-wrapper"

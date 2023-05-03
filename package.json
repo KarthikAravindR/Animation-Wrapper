@@ -2,23 +2,33 @@
   "name": "animation-wrapper",
   "version": "1.0.2",
   "description": "A Wrapper that animates the children on mount and unmount and destroy itself after unmount",
-  "private": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "author": "KarthikAravindR",
   "license": "MIT",
-  "main": "./dist/animation.mjs",
-  "dependencies": {
-    "@types/node": "^16.18.25",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.1",
-    "react": "^18.2.0",
-    "typescript": "^4.9.5",
-    "vite-plugin-dts": "^2.3.0"
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc && cp package.json README.md ./dist"
+  },
+  "peerDependencies": {
+    "react": ">=16 || >=17 || >= 18",
+    "react-dom": ">=16 || >=17 || >= 18"
   },
   "devDependencies": {
-    "vite": "^4.3.3"
+    "@types/react": "^18.0.2",
+    "@types/react-dom": "^18.0.1",
+    "@types/react-router-dom": "^5.1.7",
+    "react": "^18.0.2",
+    "react-dom": "^18.0.2",
+    "react-router-dom": "^5.2.0",
+    "typescript": "^4.9.5"
   },
-  "scripts": {
-    "build": "vite build"
+  "resolutions": {
+    "@types/react": "^16.14.2"
+  },
+  "engines": {
+    "node": ">=10"
   },
   "files": [
     "*.md",

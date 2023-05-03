@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 interface AnimationWrapperProps {
   show: boolean;
   children: JSX.Element;
@@ -18,7 +18,7 @@ export const AnimationWrapper = ({
   options = { duration: 500, fill: "forwards" },
   className,
 }: AnimationWrapperProps) => {
-  const element = useRef<HTMLDivElement>(null);
+  const element = React.useRef<HTMLDivElement>(null);
   const [removeState, setRemoveState] = useState(!show);
 
   useEffect(() => {
