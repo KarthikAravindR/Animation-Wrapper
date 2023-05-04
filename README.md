@@ -28,12 +28,11 @@ return (
   </>
 );
 
-const ChildComponent = ({ renderProblem }) => {
+const ChildComponent = () => {
   const [text, setText] = useState("");
   return (
     <input
       aria-label="string"
-      className={renderProblem ? "fade-animation" : ""}
       value={text}
       onChange={(e) => setText(e.target.value)}
     />
