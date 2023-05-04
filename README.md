@@ -22,11 +22,12 @@ const [show, setShow] = useState(false);
 return (
   <>
     <button onClick={() => setShow((state) => !state)}>Click me</button>
-    <AnimationWrapper 
-        show={show} 
-        options={ duration: 1500 } 
-        from={{ opacity: 0, transform: "translateY(-100px)" }} 
-        to={{ opacity: 1, transform: "translateY(0)" }}>
+    <AnimationWrapper
+      show={show}
+      options={{ duration: 1500 }}
+      from={{ opacity: 0, transform: "translateY(-100px)" }}
+      to={{ opacity: 1, transform: "translateY(0)" }}
+    >
       <ChildComponent />
     </AnimationWrapper>
   </>
