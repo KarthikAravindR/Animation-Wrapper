@@ -1,6 +1,6 @@
 {
   "name": "animation-wrapper",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A Wrapper that animates the children on mount and unmount and destroy itself after unmount",
   "source": "src/index.tsx",
   "main": "./dist/cjs/index.js",
