@@ -53,6 +53,6 @@ const ChildComponent = () => {
 | children         | ReactNode       | -                                   | Element to be animated                                                 |
 | from             | KeyFrame        | { opacity: 0 }                      | starting position/state of animation when mounting                     |
 | to               | KeyFrame        | { opacity: 1 }                      | ending position/state of animation when mounting                       |
-| unmountAnimation | Array<Keyframe> | [{ opacity: 0 }, { opacity: 1 }]    | animation that needed to occur when unmounting                         |
+| unmountAnimation | Array<Keyframe> | [{ opacity: 0 }, { opacity: 1 }]    | animation that needed to occur when unmounting, If not passed, mount animation will be reversed. i.e starts with to prop and ends with from prop                         |
 | options          | object          | { duration: 500, fill: "forwards" } | configuration of animation                                             |
 | className        | string          | ""                                  | className can be passed to change the wrapper style like making inline |
